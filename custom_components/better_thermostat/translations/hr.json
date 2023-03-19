@@ -1,0 +1,92 @@
+{
+        "title": "Bolji Termostat",
+        "config": {
+                "step": {
+                        "user": {
+                                "description": "Postavljanje boljeg termostata u Home Assistant\n**Za više informacija: https://better-thermostat.org/configuration/#first-step** ",
+                                "data": {
+                                        "name": "Ime",
+                                        "thermostat": "Pravi termostat",
+                                        "temperature_sensor": "Senzor temperature",
+                                        "humidity_sensor": "Senzor vlage",
+                                        "window_sensors": "Sensor prozora",
+                                        "off_temperature": "Vanjska temperatura gašenja",
+                                        "window_off_delay": "Zadrška kod otvaranja ili kod zatvaranja prozora",
+                                        "outdoor_sensor": "Ako postoji vanjski senzor, može se koriatiti za prikaz vanjske temperature",
+                                        "weather": "entitet prognoze vremena za dobivanjs vanjske temperature"
+                                }
+                        },
+                        "advanced": {
+                                "description": "Napredne postavke\n\n**Informacije o kalibraciji na: https://better-thermostat.org/configuration/#second-step** ",
+                                "data": {
+                                        "protect_overheating": "Zaštita od pregrijavanja?",
+                                        "heat_auto_swapped": "ako auto radi kao grijanje za TRV i želiš ga promjeniti",
+                                        "child_lock": "Ignoriraj sve ulaze termostata",
+                                        "homaticip": "Ako koristiš HomaticIP, uključi ovo da usporiš zahtjeve i usporiš radne cikluse",
+                                        "valve_maintenance": "Ako vaš termostat nema mod održavanja možete koristiti ovaj",
+                                        "calibration": "Tip kalibracije",
+                                        "calibration_mode": "način kalibracije",
+                                        "no_off_system_mode": "Ako vaš termostat nema OFF možete koristiti temperaturu od 5°C umjesto toga"
+                                },
+                                "data_description": {
+                                        "protect_overheating": "Neki uređaji ne zatvaraju ventil u potpunosti. Ili radiatori imaju puno zaostale topline. To može uzročiti pregrijavanje.Ova opcija to može spriječiti.",
+                                        "calibration_mode": "Način kako kalibracija treba biti kalkulirana\n***Normal***: U ovom načinu interni TRV temperaturni senzor perature biti će fiksiran na vanjski senzor temperature.\n***Aggresive***: U ovom načinu interni TRV temperaturni senzor perature biti će fiksiran na vanjski senzor temperature ali postavljen punoo više/niže za dobiti jači odziv.\n***AI Time Based***: U ovom načinu interni TRV temperaturni senzor perature biti će fiksiran na vanjski senzor temperature, ali vrijednost se izračunava po prilagođenom algoritmu za optimizaciju TRV algoritma.",
+                                        "calibration": "Kako kalibracija treba biti aplicirana na TRV (ciljana temp. ili ofset)\n***Bazirano na ciljnoj Temperaturi***: Postavi temperaturu po ciljnoj temperaturi.\n***Bazirano na razlici***: postavi kalibraciju po razlici."
+                                }
+                        },
+                        "confirm": {
+                                "title": "Potvrdi dodavanje Boljeg Termostata",
+                                "description": "Upravo ćeš instalirati `{name}` u Home Assistant.\nSa {trv} kao pravi Termostat"
+                        }
+                },
+                "error": {
+                        "failed": "nešto je prošlo krivo.",
+                        "no_name": "Molim unesi ime.",
+                        "no_off_mode": "Tvoj uređaj je specifičan i nema modalitet gašenja :(\nBolji termostat će umjesto toga korstiti najnižu temperaturu."
+                },
+                "abort": {
+                        "single_instance_allowed": "Samo jedan termostat za svaki fizički termostat je dozvoljen.",
+                        "no_devices_found": "Nije pronađen termostat entitet, provjerite dali postoji clima entitet u home assistantu"
+                }
+        },
+        "options": {
+                "step": {
+                        "user": {
+                                "description": "Obnovi postavke Boljeg termostata",
+                                "data": {
+                                        "temperature_sensor": "Senzor Temperature",
+                                        "humidity_sensor": "Senzor Vlage",
+                                        "window_sensors": "Senzor Prozora",
+                                        "off_temperature": "Vanjska temperatura gašenja termostata",
+                                        "window_off_delay": "Zadrška kod otvaranja ili kod zatvaranja prozora",
+                                        "outdoor_sensor": "Ako postoji vanjski senzor, može se koriatiti za prikaz vanjske temperature",
+                                        "valve_maintenance": "Ako vaš termostat nema mod održavanja možete koristiti ovaj",
+                                        "calibration": "Vrsta kalibracije https://better-thermostat.org/configuration/#second-step",
+                                        "weather": "entitet prognoze vremena za dobivanjs vanjske temperature",
+                                        "calibration_round": "Treba li kalibracija biti zaokružena na obližnju?",
+                                        "heat_auto_swapped": "ako auto radi kao grijanje za TRV i želiš ga promjeniti",
+                                        "child_lock": "Ignoriraj ulaze (zaštita od djece)",
+                                        "homaticip": "Ako koristiš HomaticIP, uključi ovo da usporiš zahtjeve i usporiš radne cikluse"
+                                }
+                        },
+                        "advanced": {
+                                "description": "Napredna konfiguracija\n\n**Informacije o kalibraciji: https://better-thermostat.org/configuration/#second-step** ",
+                                "data": {
+                                        "protect_overheating": "Zaštita od pregrijavanja?",
+                                        "heat_auto_swapped": "ako auto radi kao grijanje za TRV i želiš ga promjeniti",
+                                        "child_lock": "Ignoriraj ulaze (zaštita od djece)",
+                                        "homaticip": "Ako koristiš HomaticIP, uključi ovo da usporiš zahtjeve i usporiš radne cikluse",
+                                        "valve_maintenance": "Ako vaš termostat nema mod održavanja možete koristiti ovaj",
+                                        "calibration": "Vrsta kalibracije koju želiš koristiti",
+                                        "calibration_mode": "Način kalibracije",
+                                        "no_off_system_mode": "Ako vaš termostat nema OFF možete koristiti temperaturu od 5°C umjesto toga"
+                                },
+                                "data_description": {
+                                        "protect_overheating": "Neki uređaji ne zatvaraju ventil u potpunosti. Ili radiatori imaju puno zaostale topline. To može uzročiti pregrijavanje.Ova opcija to može spriječiti.",
+                                        "calibration_mode": "Način kako kalibracija treba biti kalkulirana\n***Normal***: U ovom načinu interni TRV temperaturni senzor perature biti će fiksiran na vanjski senzor temperature.\n***Aggresive***: U ovom načinu interni TRV temperaturni senzor perature biti će fiksiran na vanjski senzor temperature ali postavljen punoo više/niže za dobiti jači odziv.\n***AI Time Based***: U ovom načinu interni TRV temperaturni senzor perature biti će fiksiran na vanjski senzor temperature, ali vrijednost se izračunava po prilagođenom algoritmu za optimizaciju TRV algoritma.",
+                                        "calibration": "Kako kalibracija treba biti aplicirana na TRV (ciljana temp. ili ofset)\n***Bazirano na ciljnoj Temperaturi***: Postavi temperaturu po ciljnoj temperaturi.\n***Bazirano na razlici***: postavi kalibraciju po razlici."
+                                }
+                        }
+                }
+        }
+}
